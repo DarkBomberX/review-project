@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="${reviewModel.title}">review</title>
+</head>
+<body>
+
+	<header>
+		<h1 th:text="${reviewModel.title}">review</h1>
+	</header>
+
+	<main>
+			<p th:text="${reviewModel.synopsis}"></p>
+	</main>
+
+	<footer>
+		<p><a href="/show-reviews">Go Back To Reviews</a></p>
+		<small>The Opinions of One Man with Too Much Time 2020</small>
+	</footer>
+
+</body>
+</html>
