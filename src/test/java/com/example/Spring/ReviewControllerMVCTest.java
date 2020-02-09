@@ -1,5 +1,6 @@
 package com.example.Spring;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -47,7 +48,7 @@ public class ReviewControllerMVCTest {
 	@Test
 	public void shouldGetStatusOfOkWhenNavigatingToSingleReviewPage() throws Exception{
 		when(reviewRepo.findOneReview(1)).thenReturn(review1);
-		this.mockMvc.perform(get("/review")).andExpect(status().isOk())
+		this.mockMvc.perform(get("/review/1")).andExpect(status().isOk())
 		.andExpect(view().name("review"));
 	}
 	
@@ -56,6 +57,22 @@ public class ReviewControllerMVCTest {
 		when(reviewRepo.findAllReviews()).thenReturn(Arrays.asList(review1,review2));
 		this.mockMvc.perform(get("/show-reviews")).andExpect(model().attribute("reviewModel", hasSize(2)));
 	}
+	
+	@Test
+	public void shouldAddSingleReviewToTheModel() throws Exception {
+		when(reviewRepo.findOneReview(1)).thenReturn(review1);
+		this.mockMvc.perform(get("/review/1")).andExpect(model().attribute("reviewModel",is(review1)));
+	}
+
+	
+	@Test
+	public void shouldReturnNotFoundForBadRequest() throws Exception {
+	Long badId = 5L;
+	when(reviewRepo.findOneReview(badId)).thenReturn(null);
+	this.mockMvc.perform(get("/review?id=5"))
+	.andExpect(status().isNotFound());
+	}
+	
 	
 
 }

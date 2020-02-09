@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Controller
@@ -20,8 +20,12 @@ public class ReviewController {
 		return "reviews-template";
 	}
 	
-	@GetMapping("/review")
-	public String findOneReview(@RequestParam Long id, Model model) {
+	@GetMapping("/review/{id}")
+	public String findOneReview(@PathVariable(value="id") Long id, Model model) throws ReviewNotFoundException {
+		
+		if(reviewRepo.findOneReview(id) == null) {
+			throw new ReviewNotFoundException();
+		}
 		model.addAttribute("reviewModel", reviewRepo.findOneReview(id));
 		return "review";
 	}
