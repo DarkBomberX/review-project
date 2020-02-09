@@ -1,21 +1,27 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<link rel="stylesheet" href="/css/main.css" type="text/css">
 	<title th:text="${reviewModel.title}">review</title>
 </head>
 <body>
 
 	<header>
 		<h1 th:text="${reviewModel.title}">review</h1>
+		<h2 th:text="${reviewModel.synopsis}"></h2>
 	</header>
 
 	<main>
-			<p th:text="${reviewModel.synopsis}"></p>
+			<img th:src="${reviewModel.image}"/>
+			<p th:text="${reviewModel.content}">review</p>
+		<div class="score">
+			<h2 th:text="${reviewModel.reviewScore}"></h2>
+		</div>
 	</main>
 
 	<footer>
 		<p><a href="/show-reviews">Go Back To Reviews</a></p>
-		<small>The Opinions of One Man with Too Much Time 2020</small>
+		<small>The Opinions of One Man with Too Much Time, 2020</small>
 	</footer>
 
 </body>

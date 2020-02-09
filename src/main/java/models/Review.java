@@ -4,16 +4,16 @@ public class Review {
 	private long id;
 	private String title;
 	private String image;
-	private String reviewCatagory;
+	private String reviewScore;
 	private String content;
 	private String synopsis;
 	
 	
-	public Review(long id, String title, String image, String reviewCatagory, String content, String synopsis) {
+	public Review(long id, String title, String image, String reviewScore, String content, String synopsis) {
 		this.id = id;
 		this.title = title;
 		this.image = image;
-		this.reviewCatagory = reviewCatagory;
+		this.reviewScore = reviewScore;
 		this.content = content;
 		this.synopsis = synopsis;
 	}
@@ -35,11 +35,11 @@ public class Review {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getReviewCatagory() {
-		return reviewCatagory;
+	public String getReviewScore() {
+		return reviewScore;
 	}
-	public void setReviewCatagory(String reviewCatagory) {
-		this.reviewCatagory = reviewCatagory;
+	public void setReviewScore(String reviewScore) {
+		this.reviewScore = reviewScore;
 	}
 	public String getContent() {
 		return content;

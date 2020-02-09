@@ -1,0 +1,29 @@
+body {background-color: #235bc4;}
+
+body {
+  text-align: center;
+}
+
+h1, .score {
+    background-color: aliceblue;
+}
+
+ul{
+    position:relative;
+    display: inline-block;  
+    list-style: none;
+    width:100%;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+  }
+
+  .logo img{
+    width: 20%;
+    height: auto;
+    align-items: center;
+  }
+
+  p {
+      font-size: large;
+  }

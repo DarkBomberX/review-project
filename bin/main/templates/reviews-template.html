@@ -1,15 +1,19 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>List of Reviews</title>
+	<link rel="stylesheet" href="/css/main.css">
+	<title>Eddie's Marvel Legend's Reviews</title>
 </head>
 <body>
 
 	<header>
-		<h1>A List of All Courses</h1>
+		<h1>Marvel Legends Reviews</h1>
 	</header>
 	
 	<main>
+	<div class="logo">
+	<img th:src="@{images/MLLogo.jpg}"/>
+	</div>
 		<ul>
             <li th:each="review: ${reviewModel}"><a th:href="|/review/${review.id}|" 
                 th:text="${review.title}"></a></li>

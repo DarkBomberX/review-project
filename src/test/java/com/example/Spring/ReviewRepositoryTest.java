@@ -19,10 +19,10 @@ public class ReviewRepositoryTest {
 	
 	private Review review1 = new Review(1, "Marvel Legends Reviews",
 			"https://i1.wp.com/piercingmetal.com/wp-content/uploads/2016/11/Logo-Marvel-Legends-Series.jpg?resize=474%2C237&ssl=1",
-			"New Release", "Content", "Opinions");
+			"9 Out of 10", "Content", "Opinions");
 	private Review review2 = new Review(2, "Marvel Legends Reviews",
 			"https://i1.wp.com/piercingmetal.com/wp-content/uploads/2016/11/Logo-Marvel-Legends-Series.jpg?resize=474%2C237&ssl=1",
-			"New Release", "Content", "Opinions");
+			"8 Out of 10", "Content", "Opinions");
 
 	@Test
 	public void shouldPullReview1() {
